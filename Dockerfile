@@ -11,4 +11,4 @@ RUN apk --update add --virtual build-dependencies libffi-dev openssl-dev python-
   && apk del build-dependencies
 
 COPY . /app
-CMD ["gunicorn", "-b", "0.0.0.0:3000", "--env", "DJANGO_SETTINGS_MODULE=Rubberducky.settings.production", "Rubberducky.wsgi", "--timeout 120"]
+CMD ["gunicorn", "-b", "0.0.0.0:3000", "--env", "DJANGO_SETTINGS_MODULE=Rubberducky.settings.production", "hello.py", "--timeout 120"]
